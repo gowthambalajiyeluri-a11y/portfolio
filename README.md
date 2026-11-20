@@ -1,7 +1,7 @@
 # Personal Portfolio Website
 
 ## Project Overview
-A personal portfolio website hosted on AWS EC2 using Docker and deployed automatically through GitHub Actions.
+A personal portfolio website hosted on AWS EC2 using Docker and automated deployment through GitHub Actions.
 
 ## Technologies Used
 - HTML
@@ -12,28 +12,35 @@ A personal portfolio website hosted on AWS EC2 using Docker and deployed automat
 - Git and GitHub
 - GitHub Actions (CI/CD)
 
-## Architecture
+## Project Architecture
 1. Source code is maintained in GitHub.
-2. GitHub Actions triggers automatically whenever code is pushed to the `main` branch.
-3. GitHub Actions connects to the AWS EC2 instance using SSH.
-4. The latest code is pulled from GitHub.
+2. GitHub Actions triggers when code is pushed to the main branch.
+3. GitHub Actions connects to the EC2 instance using SSH.
+4. The latest source code is pulled from GitHub.
 5. Docker builds a new image.
-6. The application runs inside an Nginx container.
-
-## Deployment
-The portfolio website is hosted on an AWS EC2 Ubuntu instance and served through Docker.
-
-**Application port:** 5000
-
-**Live Website:** Add your EC2 public IP and port 5000 here.
+6. The website runs inside an Nginx Docker container.
 
 ## Features
-- Responsive static portfolio website
+- Personal portfolio website
+- Responsive web design
 - Docker containerization
-- Automated deployment using GitHub Actions
-- Cloud hosting using AWS EC2
+- Automated CI/CD deployment
+- AWS cloud hosting
 - Nginx web server
+
+## Deployment Details
+- Cloud Platform: AWS EC2
+- Operating System: Ubuntu
+- Containerization: Docker
+- Web Server: Nginx
+- Application Port: 5000
+- CI/CD: GitHub Actions
+
+## How to Run Locally
+```bash
+docker build -t portfolio-img .
+docker run -d -p 5000:80 --name portfolio-container portfolio-img
+```
 
 ## Author
 Portfolio Project
-# portfolio
